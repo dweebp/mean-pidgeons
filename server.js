@@ -11,7 +11,8 @@ app.all('/*', function(req, res) {
         '</title>' +
         '</head>' +
         '<body>' +
-        '<h1>Hello</h1>' +
+        '<h1>Pidgeons</h1>' +
+        '<script src="bundle.js"></script>' +
         '</body>' +
         '</html>');
 
