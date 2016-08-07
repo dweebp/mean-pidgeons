@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dweebp/mean-pidgeons/issues"
   },
-  "homepage": "https://github.com/dweebp/mean-pidgeons#readme"
+  "homepage": "https://github.com/dweebp/mean-pidgeons#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
