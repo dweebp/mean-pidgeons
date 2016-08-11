@@ -1,3 +1,5 @@
-const hello = 'hello';
+import angular from 'angular';
+import appModule from 'config';
+import 'css/master.scss';
 
-console.log(hello);
+angular.bootstrap(document, [appModule.name]);

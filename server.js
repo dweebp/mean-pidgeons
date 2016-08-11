@@ -3,19 +3,18 @@ var app = express();
 
 var PORT = process.env.PORT || 3000;
 
-app.all('/*', function(req, res) {
-    res.send( '<!DOCTYPE html>'+
-        '<html>' +
-        '<head>' +
-        '<title>' + 'pidgeons' +
-        '</title>' +
-        '</head>' +
-        '<body>' +
-        '<h1>Pidgeons</h1>' +
-        '<script src="bundle.js"></script>' +
-        '</body>' +
-        '</html>');
-
+app.all('/*', function(req, res){
+    res.send('\
+        <!DOCTYPE html>\
+        <head>\
+        <title>Mean pidgeons</title>\
+        <base href="/">\
+        <head>\
+        <body>\
+            <div ui-view></div>\
+            <script src="bundle.js"></script>\
+        </body>\
+    ');
 });
 
 app.listen(PORT, function(){

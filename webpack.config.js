@@ -1,3 +1,5 @@
+//TODO: resolve console error 
+
 var webpack = require('webpack');
 var path = require('path');
 
@@ -14,18 +16,40 @@ module.exports = {
     },
     resolve: {
         modulesDirectories: ['node_modules', 'src'],
-        extension: ['', '.js', '.scss']
+        extension: ['', '.js', '.scss', '.css']
     },
-    module: [
-        {
-            test:/\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015']
+    module: {
+        loaders: [
+            {
+                test:/\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.html$/,
+                loader: 'raw'
+            },
+            {
+                test: /\.css$/,
+                loaders: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test:/\.scss$/,
+                loaders: [
+                    'style',
+                    'css',
+                    'autoprefixer?browsers=last 3 versions',
+                    'sass?outputStyle=expanded'
+                ]
             }
-        }
-    ],
+        ]
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
